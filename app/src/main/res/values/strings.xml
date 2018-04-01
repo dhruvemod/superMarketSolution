@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SuperMarket Solution</string>
+    <string name="empty_list">Click on the plus button to add items</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="qty">Quantity</string>
+    <string name="cost">Cost:</string>
+    <string name="qt">Qty</string>
+    <string name="empty">List Empty</string>
+    <string name="dealer">Dealer Mobile</string>
+    <string name="image_button">Image</string>
+    <string name="image_select">Select Image</string>
+</resources>
