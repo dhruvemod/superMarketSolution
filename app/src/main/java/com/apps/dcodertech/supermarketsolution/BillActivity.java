@@ -8,15 +8,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.apps.dcodertech.supermarketsolution.data.inventoryDB;
 import com.apps.dcodertech.supermarketsolution.data.SalesDB;
 
 public class BillActivity extends Fragment {
     CustomAdapterBills customAdapterBills;
     SalesDB salesDB;
     Cursor cursor;
+    inventoryDB inventoryDB;
     int lastItem = 0;
     ListView listView;
 

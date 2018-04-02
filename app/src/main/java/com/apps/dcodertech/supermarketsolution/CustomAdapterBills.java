@@ -10,8 +10,11 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.apps.dcodertech.supermarketsolution.data.SaleContract;
+import com.apps.dcodertech.supermarketsolution.data.inventoryDB;
 
 public class CustomAdapterBills extends CursorAdapter {
+    inventoryDB inventoryDB;
+
     private BillActivity activity;
     public CustomAdapterBills(BillActivity activity, Cursor cursor){
         super(activity.getContext(), cursor,0);
@@ -36,10 +39,10 @@ public class CustomAdapterBills extends CursorAdapter {
         String total = cursor.getString(cursor.getColumnIndex(SaleContract.SaleEntry.COLUMN_TOTAL));
         String price = cursor.getString(cursor.getColumnIndex(SaleContract.SaleEntry.COLUMN_PRICE));
         nameTextView.setText(name);
-        priceTextView.setText(price);
+        priceTextView.setText(price+" Rs");
         quantityTextView.setText(quantity);
-        dateTextView.setText(d+", "+da);
-        totalTextView.setText(total);
+        dateTextView.setText(d+", ");
+        totalTextView.setText(total+" Rs");
 
     }
 

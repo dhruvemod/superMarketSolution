@@ -53,6 +53,7 @@ public class SalesDB extends SQLiteOpenHelper {
         );
         return cursor;
     }
+
     public Cursor readItemInfo(long itemId) {
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {

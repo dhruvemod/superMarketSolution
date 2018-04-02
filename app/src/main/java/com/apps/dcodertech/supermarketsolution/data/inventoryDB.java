@@ -5,7 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
+import android.util.Log;
+import android.widget.Toast;
 
 
 public class inventoryDB extends SQLiteOpenHelper {
@@ -36,7 +37,30 @@ public class inventoryDB extends SQLiteOpenHelper {
 
         long id = db.insert(InventoryContract.StockEntry.TABLE_NAME, null, values);
     }
+    public Cursor readStockInfoCondition(String input) {
+        Log.i("check",input);
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {
+                InventoryContract.StockEntry._ID,
+                InventoryContract.StockEntry.COLUMN_NAME,
+                InventoryContract.StockEntry.COLUMN_PRICE,
+                InventoryContract.StockEntry.COLUMN_QUANTITY,
+                InventoryContract.StockEntry.COLUMN_Phone,
 
+        };
+        String whereClause = SaleContract.SaleEntry.COLUMN_NAME+"= ?";
+        String[] whereArgs = new String[] {input};
+        Cursor cursor = db.query(
+                InventoryContract.StockEntry.TABLE_NAME,
+                projection,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
     public Cursor readStockInfo() {
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {
