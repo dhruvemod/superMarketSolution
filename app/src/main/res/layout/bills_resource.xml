@@ -4,40 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
-    android:background="#696969"
+    android:background="#006064"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="4dp"
+        android:paddingLeft="8dp"
+        android:background="#00897b"
         >
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sale Date:"
-            />
+            android:layout_height="match_parent"
+            android:text=" Sale Date:"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
         <TextView
             android:layout_width="wrap_content"
             android:id="@+id/dateBillLog"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+
             android:text="Mon April 4/2/2018"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#00897b"
+        android:paddingLeft="8dp"
         android:orientation="horizontal"
         >
     <TextView
         android:layout_width="wrap_content"
+        android:textColor="@android:color/white"
+
+
         android:layout_height="wrap_content"
         android:text="Item Name:"
+        android:textSize="20sp"
+
         />
     <TextView
         android:layout_width="wrap_content"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
+        android:textColor="@android:color/white"
+
         android:text="Bournvita"
         android:id="@+id/itemNameLog"
         />
@@ -46,17 +64,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#00897b"
+        android:paddingLeft="8dp"
+
         android:orientation="horizontal"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="Quantity:"
+            android:textColor="@android:color/white"
+
             />
         <TextView
             android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+
             android:layout_height="wrap_content"
             android:id="@+id/quantityLog"
+            android:textSize="20sp"
             android:layout_marginLeft="4dp"
             android:text="12"
             />
@@ -65,34 +92,59 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#00897b"
         android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+
         >
         <TextView
             android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="Item Price:"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:layout_marginLeft="4dp"
             android:text="20 Rs"
+            android:textColor="@android:color/white"
+
             android:id="@+id/itemPriceLog"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#004d40"
         android:orientation="horizontal"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Total Cost:"
+            android:text="Total Sale:"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:padding="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#004d40"
+            android:textColor="@android:color/white"
+
+            android:textAlignment="viewEnd"
             android:layout_marginLeft="4dp"
             android:text="240 Rs"
             android:id="@+id/totalLog"
