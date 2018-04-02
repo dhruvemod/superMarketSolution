@@ -18,7 +18,7 @@ public static class SaleEntry implements BaseColumns{
             SaleEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             SaleEntry.COLUMN_NAME + " TEXT NOT NULL," +
             SaleEntry.COLUMN_PRICE + " TEXT NOT NULL," +
-            SaleEntry.COLUMN_QUANTITY + " INTEGER NOT NULL DEFAULT 0," +
+            SaleEntry.COLUMN_QUANTITY + " TEXT NOT NULL," +
             SaleEntry.COLUMN_TOTAL + " TEXT NOT NULL,"+
             SaleEntry.COLUMN_DATE + " TEXT NOT NULL"+");";
 

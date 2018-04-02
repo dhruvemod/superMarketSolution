@@ -6,7 +6,7 @@ public class Sale {
     private final String dateTable;
     private final String quantity;
     private final String totaltable;
-    public Sale(String productNameTable,String priceTable2,String dateTable,String quantity,String totaltable){
+    public Sale(String productNameTable,String priceTable2,String quantity,String totaltable,String dateTable){
         this.productNametable=productNameTable;
         this.priceTable2=priceTable2;
         this.quantity=quantity;

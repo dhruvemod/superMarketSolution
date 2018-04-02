@@ -29,7 +29,7 @@ public class SalesDB extends SQLiteOpenHelper {
         values.put(SaleContract.SaleEntry.COLUMN_DATE,item.getDateTable());
 
 
-        long id = db.insert(InventoryContract.StockEntry.TABLE_NAME, null, values);
+        long id = db.insert(SaleContract.SaleEntry.TABLE_NAME, null, values);
     }
     public Cursor readStockInfo() {
         SQLiteDatabase db = getReadableDatabase();
