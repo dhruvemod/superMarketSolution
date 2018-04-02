@@ -1,5 +1,6 @@
 package com.apps.dcodertech.supermarketsolution;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
@@ -60,12 +61,21 @@ public class BillAddActivity extends AppCompatActivity {
                     do {
 
                         String price=cursor.getString(cursor.getColumnIndex(InventoryContract.StockEntry.COLUMN_PRICE));
+                        String quants=cursor.getString(cursor.getColumnIndex(InventoryContract.StockEntry.COLUMN_QUANTITY));
+                        int quantInt=Integer.parseInt(quants);
+                        if((quantInt-Integer.parseInt(q))<0){
+                            Toast.makeText(BillAddActivity.this, "Item quantity insufficient!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        else{
+                            int finaltot=quantInt-Integer.parseInt(q);
+                            updateItemBill(finaltot,name);
+
                         int p=Integer.parseInt(price);
-                        
                         int tot=Integer.parseInt(q)*p;
                         String totl=String.valueOf(tot);
                         Sale sale = new Sale(name, price, q, totl, String.valueOf(currentTime));
-                        salesDB.insert(sale);
+                        salesDB.insert(sale);}
                     } while (cursor.moveToNext());
 
                     cursor.close();
@@ -78,6 +88,15 @@ public class BillAddActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void updateItemBill(int quantity, String name) {
+        SQLiteDatabase db = inv.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(InventoryContract.StockEntry.COLUMN_QUANTITY, quantity);
+        String selection = InventoryContract.StockEntry.COLUMN_NAME + "=?";
+        String[] selectionArgs = new String[]{name};
+        db.update(InventoryContract.StockEntry.TABLE_NAME,
+                values, selection, selectionArgs);
     }
 
 }

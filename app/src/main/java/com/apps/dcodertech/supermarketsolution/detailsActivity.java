@@ -188,7 +188,10 @@ public class detailsActivity extends AppCompatActivity {
             return true;
         }
     }
+    public void valuesEditAfterBilling(){
 
+
+    }
     private void valuesEdit(long itemId) {
         Cursor cursor = dbHelper.readItemInfo(itemId);
         cursor.moveToFirst();
